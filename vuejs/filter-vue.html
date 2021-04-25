@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>2.- Formas de realizar Filter Vue | ROMACODE</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="y">
+    <meta name="theme-color" content="#003189">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/roma-fullstack/assets/css/0.styles.93a957b3.css" as="style"><link rel="preload" href="/roma-fullstack/assets/js/app.5d7ae976.js" as="script"><link rel="preload" href="/roma-fullstack/assets/js/2.5073a0e7.js" as="script"><link rel="preload" href="/roma-fullstack/assets/js/28.ce2e8b26.js" as="script"><link rel="prefetch" href="/roma-fullstack/assets/js/10.6ca78bdb.js"><link rel="prefetch" href="/roma-fullstack/assets/js/11.04db5633.js"><link rel="prefetch" href="/roma-fullstack/assets/js/12.7e7a125c.js"><link rel="prefetch" href="/roma-fullstack/assets/js/13.4ca882aa.js"><link rel="prefetch" href="/roma-fullstack/assets/js/14.1c01638e.js"><link rel="prefetch" href="/roma-fullstack/assets/js/15.fec1035f.js"><link rel="prefetch" href="/roma-fullstack/assets/js/16.d5bd03c5.js"><link rel="prefetch" href="/roma-fullstack/assets/js/17.e098afee.js"><link rel="prefetch" href="/roma-fullstack/assets/js/18.4b6efa6a.js"><link rel="prefetch" href="/roma-fullstack/assets/js/19.a19cbbf2.js"><link rel="prefetch" href="/roma-fullstack/assets/js/20.a5757abe.js"><link rel="prefetch" href="/roma-fullstack/assets/js/21.384d4d96.js"><link rel="prefetch" href="/roma-fullstack/assets/js/22.c60c357e.js"><link rel="prefetch" href="/roma-fullstack/assets/js/23.b7569417.js"><link rel="prefetch" href="/roma-fullstack/assets/js/24.fb3de600.js"><link rel="prefetch" href="/roma-fullstack/assets/js/25.89355ab5.js"><link rel="prefetch" href="/roma-fullstack/assets/js/26.0321ebb7.js"><link rel="prefetch" href="/roma-fullstack/assets/js/27.80c286bb.js"><link rel="prefetch" href="/roma-fullstack/assets/js/29.17a5e7af.js"><link rel="prefetch" href="/roma-fullstack/assets/js/3.dc8005b8.js"><link rel="prefetch" href="/roma-fullstack/assets/js/4.4d31d94d.js"><link rel="prefetch" href="/roma-fullstack/assets/js/5.4e7a2df9.js"><link rel="prefetch" href="/roma-fullstack/assets/js/6.498ab014.js"><link rel="prefetch" href="/roma-fullstack/assets/js/7.7e550121.js"><link rel="prefetch" href="/roma-fullstack/assets/js/8.809ecbb3.js"><link rel="prefetch" href="/roma-fullstack/assets/js/9.b751af4a.js">
+    <link rel="stylesheet" href="/roma-fullstack/assets/css/0.styles.93a957b3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/roma-fullstack/" class="home-link router-link-active"><!----> <span class="site-name">ROMACODE</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/roma-fullstack/fullstack/" class="nav-link">
+  FullStack
+</a></div><div class="nav-item"><a href="/roma-fullstack/vuejs/" class="nav-link router-link-active">
+  VueJs
+</a></div><div class="nav-item"><a href="/roma-fullstack/reactjs/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="https://romadesign.github.io/roma" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Romacode
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/roma-fullstack/fullstack/" class="nav-link">
+  FullStack
+</a></div><div class="nav-item"><a href="/roma-fullstack/vuejs/" class="nav-link router-link-active">
+  VueJs
+</a></div><div class="nav-item"><a href="/roma-fullstack/reactjs/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="https://romadesign.github.io/roma" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Romacode
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>VueJs</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/roma-fullstack/vuejs/" aria-current="page" class="sidebar-link">Inicia en VueJs</a></li><li><a href="/roma-fullstack/vuejs/instalar.html" class="sidebar-link">1.- Primeros pasos</a></li><li><a href="/roma-fullstack/vuejs/filter-vue.html" aria-current="page" class="active sidebar-link">2.- Formas de realizar Filter Vue</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/roma-fullstack/vuejs/filter-vue.html#crear-un-entorno-vue" class="sidebar-link">Crear un entorno Vue.</a></li><li class="sidebar-sub-header"><a href="/roma-fullstack/vuejs/filter-vue.html#vue-axios" class="sidebar-link">Vue-axios</a></li><li class="sidebar-sub-header"><a href="/roma-fullstack/vuejs/filter-vue.html#realizando-filter-v1" class="sidebar-link">Realizando filter v1</a></li></ul></li><li><a href="/roma-fullstack/vuejs/deploy-vue.html" class="sidebar-link">10.- Subir proyecto a GitHub</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_2-formas-de-realizar-filter-vue"><a href="#_2-formas-de-realizar-filter-vue" class="header-anchor">#</a> 2.- Formas de realizar Filter Vue</h1> <h2 id="crear-un-entorno-vue"><a href="#crear-un-entorno-vue" class="header-anchor">#</a> Crear un entorno Vue.</h2> <div class="language- extra-class"><pre class="language-text"><code> $ vue create nombre_de_la_carpeta
+</code></pre></div><h2 id="vue-axios"><a href="#vue-axios" class="header-anchor">#</a> Vue-axios</h2> <p>Siempre verificar que versión de Vue utilizan
+<a href="https://www.npmjs.com/package/vue-axios" target="_blank" rel="noopener noreferrer">https://www.npmjs.com/package/vue-axios<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <div class="language- extra-class"><pre class="language-text"><code>npm install --save axios vue-axios
+</code></pre></div><p>En el documento main.js copiamos estas lineas</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span>
+<span class="token keyword">import</span> VueAxios <span class="token keyword">from</span> <span class="token string">'vue-axios'</span>
+ 
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueAxios<span class="token punctuation">,</span> axios<span class="token punctuation">)</span>
+
+</code></pre></div><h2 id="realizando-filter-v1"><a href="#realizando-filter-v1" class="header-anchor">#</a> Realizando filter v1</h2> <p>Código para el template</p> <div class="language-html extra-class"><pre class="language-html"><code>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>logo<span class="token punctuation">&quot;</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>@/assets/logo.png<span class="token punctuation">&quot;</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Characters<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> 
+         <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span> 
+         <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>search<span class="token punctuation">&quot;</span></span> 
+         <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>Search<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>content<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>content-characters<span class="token punctuation">&quot;</span></span> 
+           <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>character in filterSearch<span class="token punctuation">&quot;</span></span> 
+           <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>character.id<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>character<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">:src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>character.image<span class="token punctuation">&quot;</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>info-character<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span> {{ character.name}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">&gt;</span></span> {{ character.species}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">&gt;</span></span>
+             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">&gt;</span></span> {{ character.status}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>Código para el Script</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+<span class="token comment">// @ is an alias to /src</span>
+<span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'app'</span><span class="token punctuation">,</span>
+  components<span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      search<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+      characters<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getTodos</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">getTodos</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      axios
+      <span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'https://rickandmortyapi.com/api/character/'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>characters <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>results<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  computed<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">filterSearch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>characters<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">character</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> character<span class="token punctuation">.</span>name<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>search<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+ 
+
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre></div><p>Ejemplo de lo realizado:
+<a href="https://rickandmorty-api-romacode.netlify.app/" target="_blank" rel="noopener noreferrer">https://rickandmorty-api-romacode.netlify.app/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>Repositorio Github:
+<a href="https://github.com/romadesign/app-rick-and-morty" target="_blank" rel="noopener noreferrer">https://github.com/romadesign/app-rick-and-morty<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/roma-fullstack/vuejs/instalar.html" class="prev">
+        1.- Primeros pasos
+      </a></span> <span class="next"><a href="/roma-fullstack/vuejs/deploy-vue.html">
+        10.- Subir proyecto a GitHub
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/roma-fullstack/assets/js/app.5d7ae976.js" defer></script><script src="/roma-fullstack/assets/js/2.5073a0e7.js" defer></script><script src="/roma-fullstack/assets/js/28.ce2e8b26.js" defer></script>
+  </body>
+</html>
