@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>3.- Creando nuestro primer factory y Seed (Article) | ROMACODE</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="y">
+    <meta name="theme-color" content="#003189">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/roma-fullstack/assets/css/0.styles.88a17620.css" as="style"><link rel="preload" href="/roma-fullstack/assets/js/app.597ac0ff.js" as="script"><link rel="preload" href="/roma-fullstack/assets/js/2.3f4652b3.js" as="script"><link rel="preload" href="/roma-fullstack/assets/js/21.58154950.js" as="script"><link rel="prefetch" href="/roma-fullstack/assets/js/10.e5b0c0c2.js"><link rel="prefetch" href="/roma-fullstack/assets/js/11.fe73249a.js"><link rel="prefetch" href="/roma-fullstack/assets/js/12.dd9c948b.js"><link rel="prefetch" href="/roma-fullstack/assets/js/13.c32b18e9.js"><link rel="prefetch" href="/roma-fullstack/assets/js/14.0d88fe13.js"><link rel="prefetch" href="/roma-fullstack/assets/js/15.06da0dec.js"><link rel="prefetch" href="/roma-fullstack/assets/js/16.18e030f8.js"><link rel="prefetch" href="/roma-fullstack/assets/js/17.20124216.js"><link rel="prefetch" href="/roma-fullstack/assets/js/18.22fdecee.js"><link rel="prefetch" href="/roma-fullstack/assets/js/19.1a37fc83.js"><link rel="prefetch" href="/roma-fullstack/assets/js/20.62666232.js"><link rel="prefetch" href="/roma-fullstack/assets/js/22.d099f11c.js"><link rel="prefetch" href="/roma-fullstack/assets/js/23.074c3ffc.js"><link rel="prefetch" href="/roma-fullstack/assets/js/24.2dcda4ea.js"><link rel="prefetch" href="/roma-fullstack/assets/js/25.88bc144d.js"><link rel="prefetch" href="/roma-fullstack/assets/js/26.9d8cf484.js"><link rel="prefetch" href="/roma-fullstack/assets/js/27.947ea268.js"><link rel="prefetch" href="/roma-fullstack/assets/js/28.84de38de.js"><link rel="prefetch" href="/roma-fullstack/assets/js/29.ec2d940a.js"><link rel="prefetch" href="/roma-fullstack/assets/js/3.375264fa.js"><link rel="prefetch" href="/roma-fullstack/assets/js/30.a7285ad4.js"><link rel="prefetch" href="/roma-fullstack/assets/js/31.ffce1023.js"><link rel="prefetch" href="/roma-fullstack/assets/js/32.b9846abd.js"><link rel="prefetch" href="/roma-fullstack/assets/js/33.99dfdc7d.js"><link rel="prefetch" href="/roma-fullstack/assets/js/34.3d51baea.js"><link rel="prefetch" href="/roma-fullstack/assets/js/35.37bc914a.js"><link rel="prefetch" href="/roma-fullstack/assets/js/36.1c6081cb.js"><link rel="prefetch" href="/roma-fullstack/assets/js/37.4b02a31c.js"><link rel="prefetch" href="/roma-fullstack/assets/js/38.54b7ad60.js"><link rel="prefetch" href="/roma-fullstack/assets/js/39.a9bc9eb0.js"><link rel="prefetch" href="/roma-fullstack/assets/js/4.85f105cc.js"><link rel="prefetch" href="/roma-fullstack/assets/js/40.9413f1bd.js"><link rel="prefetch" href="/roma-fullstack/assets/js/41.b7439622.js"><link rel="prefetch" href="/roma-fullstack/assets/js/42.63e9cae9.js"><link rel="prefetch" href="/roma-fullstack/assets/js/43.c42ec85a.js"><link rel="prefetch" href="/roma-fullstack/assets/js/44.20ca0751.js"><link rel="prefetch" href="/roma-fullstack/assets/js/45.81148a0e.js"><link rel="prefetch" href="/roma-fullstack/assets/js/46.ad75822c.js"><link rel="prefetch" href="/roma-fullstack/assets/js/47.1e070332.js"><link rel="prefetch" href="/roma-fullstack/assets/js/48.07e9d4c9.js"><link rel="prefetch" href="/roma-fullstack/assets/js/49.846a561d.js"><link rel="prefetch" href="/roma-fullstack/assets/js/5.90a54b9f.js"><link rel="prefetch" href="/roma-fullstack/assets/js/50.97bf7808.js"><link rel="prefetch" href="/roma-fullstack/assets/js/51.88d0e863.js"><link rel="prefetch" href="/roma-fullstack/assets/js/52.c3b69e27.js"><link rel="prefetch" href="/roma-fullstack/assets/js/53.d0ecdff1.js"><link rel="prefetch" href="/roma-fullstack/assets/js/54.f996c15b.js"><link rel="prefetch" href="/roma-fullstack/assets/js/55.ee4815e9.js"><link rel="prefetch" href="/roma-fullstack/assets/js/56.83cf946c.js"><link rel="prefetch" href="/roma-fullstack/assets/js/57.dde0ff3b.js"><link rel="prefetch" href="/roma-fullstack/assets/js/58.c5004a54.js"><link rel="prefetch" href="/roma-fullstack/assets/js/59.4baf569b.js"><link rel="prefetch" href="/roma-fullstack/assets/js/6.f79a99d3.js"><link rel="prefetch" href="/roma-fullstack/assets/js/60.7a4ce42c.js"><link rel="prefetch" href="/roma-fullstack/assets/js/61.944b13c3.js"><link rel="prefetch" href="/roma-fullstack/assets/js/62.ac6b523a.js"><link rel="prefetch" href="/roma-fullstack/assets/js/7.c75d85e5.js"><link rel="prefetch" href="/roma-fullstack/assets/js/8.3a3bf5bc.js"><link rel="prefetch" href="/roma-fullstack/assets/js/9.643f3ba3.js">
+    <link rel="stylesheet" href="/roma-fullstack/assets/css/0.styles.88a17620.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/roma-fullstack/" class="home-link router-link-active"><!----> <span class="site-name">ROMACODE</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Lenguajes Menu" class="dropdown-title"><span class="title">Lenguajes</span> <span class="arrow down"></span></button> <button type="button" aria-label="Lenguajes Menu" class="mobile-dropdown-title"><span class="title">Lenguajes</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/roma-fullstack/php/" class="nav-link">
+  Php
+</a></li><li class="dropdown-item"><!----> <a href="/roma-fullstack/java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/roma-fullstack/javascript/" class="nav-link">
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Bases de datos" class="dropdown-title"><span class="title">DataBase</span> <span class="arrow down"></span></button> <button type="button" aria-label="Bases de datos" class="mobile-dropdown-title"><span class="title">DataBase</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/roma-fullstack/mysql/" class="nav-link">
+  MySql
+</a></li><li class="dropdown-item"><!----> <a href="/roma-fullstack/mongooo/" class="nav-link">
+  MongoDb
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Front end" class="dropdown-title"><span class="title">Front-end</span> <span class="arrow down"></span></button> <button type="button" aria-label="Front end" class="mobile-dropdown-title"><span class="title">Front-end</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/roma-fullstack/vuejs/" class="nav-link">
+  VueJs
+</a></li><li class="dropdown-item"><!----> <a href="/roma-fullstack/reactjs/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/roma-fullstack/jquery/" class="nav-link">
+  JQuery
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Back end" class="dropdown-title"><span class="title">Back-end</span> <span class="arrow down"></span></button> <button type="button" aria-label="Back end" class="mobile-dropdown-title"><span class="title">Back-end</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/roma-fullstack/laravel/" class="nav-link">
+  Laravel
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Full stack" class="dropdown-title"><span class="title">Full Stack</span> <span class="arrow down"></span></button> <button type="button" aria-label="Full stack" class="mobile-dropdown-title"><span class="title">Full Stack</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/roma-fullstack/fullstack-mevn/" class="nav-link">
+  MEVN STACK
+</a></li><li class="dropdown-item"><!----> <a href="/roma-fullstack/fullstack-lanm/" class="nav-link router-link-active">
+  LANM STACK
+</a></li></ul></div></div><div class="nav-item"><a href="/roma-fullstack/github/" class="nav-link">
+  GitHub
+</a></div><div class="nav-item"><a href="https://romadesign.github.io/roma" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Website
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Lenguajes Menu" class="dropdown-title"><span class="title">Lenguajes</span> <span class="arrow down"></span></button> <button type="button" aria-label="Lenguajes Menu" class="mobile-dropdown-title"><span class="title">Lenguajes</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/roma-fullstack/php/" class="nav-link">
+  Php
+</a></li><li class="dropdown-item"><!----> <a href="/roma-fullstack/java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/roma-fullstack/javascript/" class="nav-link">
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Bases de datos" class="dropdown-title"><span class="title">DataBase</span> <span class="arrow down"></span></button> <button type="button" aria-label="Bases de datos" class="mobile-dropdown-title"><span class="title">DataBase</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/roma-fullstack/mysql/" class="nav-link">
+  MySql
+</a></li><li class="dropdown-item"><!----> <a href="/roma-fullstack/mongooo/" class="nav-link">
+  MongoDb
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Front end" class="dropdown-title"><span class="title">Front-end</span> <span class="arrow down"></span></button> <button type="button" aria-label="Front end" class="mobile-dropdown-title"><span class="title">Front-end</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/roma-fullstack/vuejs/" class="nav-link">
+  VueJs
+</a></li><li class="dropdown-item"><!----> <a href="/roma-fullstack/reactjs/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/roma-fullstack/jquery/" class="nav-link">
+  JQuery
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Back end" class="dropdown-title"><span class="title">Back-end</span> <span class="arrow down"></span></button> <button type="button" aria-label="Back end" class="mobile-dropdown-title"><span class="title">Back-end</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/roma-fullstack/laravel/" class="nav-link">
+  Laravel
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Full stack" class="dropdown-title"><span class="title">Full Stack</span> <span class="arrow down"></span></button> <button type="button" aria-label="Full stack" class="mobile-dropdown-title"><span class="title">Full Stack</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/roma-fullstack/fullstack-mevn/" class="nav-link">
+  MEVN STACK
+</a></li><li class="dropdown-item"><!----> <a href="/roma-fullstack/fullstack-lanm/" class="nav-link router-link-active">
+  LANM STACK
+</a></li></ul></div></div><div class="nav-item"><a href="/roma-fullstack/github/" class="nav-link">
+  GitHub
+</a></div><div class="nav-item"><a href="https://romadesign.github.io/roma" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Website
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>fullstack-lanm</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/roma-fullstack/fullstack-lanm/" aria-current="page" class="sidebar-link">Encuentra Repositorios full stack Laravel and NextJs</a></li><li><a href="/roma-fullstack/fullstack-lanm/install.html" class="sidebar-link">1.- Primeros pasos</a></li><li><a href="/roma-fullstack/fullstack-lanm/segundo-pasos.html" class="sidebar-link">2.- Creando nuestro primer model (Article)</a></li><li><a href="/roma-fullstack/fullstack-lanm/tercer-paso.html" aria-current="page" class="active sidebar-link">3.- Creando nuestro primer factory y Seed (Article)</a></li><li><a href="/roma-fullstack/fullstack-lanm/cuarto-paso.html" class="sidebar-link">4.- Creando nuestro primer Controller and Resource (Article)</a></li><li><a href="/roma-fullstack/fullstack-lanm/quinto-paso.html" class="sidebar-link">5.- Creando nuestro Frontend con Next Js</a></li><li><a href="/roma-fullstack/fullstack-lanm/realizar-post.html" class="sidebar-link">5.- Creando nuestro primer (Article) POST</a></li><li><a href="/roma-fullstack/fullstack-lanm/mostrar-articles.html" class="sidebar-link">6.- Editando, Eliminando nuestro article</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_3-creando-nuestro-primer-factory-y-seed-article"><a href="#_3-creando-nuestro-primer-factory-y-seed-article" class="header-anchor">#</a> 3.- Creando nuestro primer factory y Seed (Article)</h1> <p>Datos de prueba</p> <div class="language- extra-class"><pre class="language-text"><code>  php artisan make:factory ArticleFactory
+  php artisan make:seed ArticlesTableSeeder
+  php artisan make:seed UsersTableSeeder
+</code></pre></div><ul><li>Ingresamos al archivo <code>database/factories/ArticleFactory.php</code></li></ul> <div class="language-php extra-class"><pre class="language-php"><code>
+    <span class="token comment">//Import Model User</span>
+    <span class="token keyword">use</span> <span class="token package">App<span class="token punctuation">\</span>Models<span class="token punctuation">\</span>User</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">class</span> <span class="token class-name">ArticleFactory</span> <span class="token keyword">extends</span> <span class="token class-name">Factory</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">/**
+         * Define the model's default state.
+         *
+         * @return array
+         */</span>
+        <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">definition</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>   
+            <span class="token variable">$title</span> <span class="token operator">=</span> <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token property">faker</span><span class="token operator">-&gt;</span><span class="token function">sentence</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token punctuation">[</span>
+                <span class="token string single-quoted-string">'title'</span> <span class="token operator">=&gt;</span> <span class="token variable">$title</span><span class="token punctuation">,</span>
+                <span class="token string single-quoted-string">'slug'</span> <span class="token operator">=&gt;</span> <span class="token class-name static-context">Str</span><span class="token operator">::</span><span class="token function">slug</span><span class="token punctuation">(</span><span class="token variable">$title</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token string single-quoted-string">'body'</span> <span class="token operator">=&gt;</span> <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token property">faker</span><span class="token operator">-&gt;</span><span class="token function">paragraph</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token string single-quoted-string">'author_id'</span> <span class="token operator">=&gt;</span> <span class="token variable">$attribute</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'author_id'</span><span class="token punctuation">]</span> <span class="token operator">??</span> <span class="token class-name static-context">User</span><span class="token operator">::</span><span class="token function">factory</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+</code></pre></div><ul><li>Ingresamos al archivo <code>database/factories/UserFactory.php</code></li></ul> <div class="language-php extra-class"><pre class="language-php"><code>
+     <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">definition</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span>
+            <span class="token string single-quoted-string">'name'</span> <span class="token operator">=&gt;</span> <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token property">faker</span><span class="token operator">-&gt;</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token string single-quoted-string">'email'</span> <span class="token operator">=&gt;</span> <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token property">faker</span><span class="token operator">-&gt;</span><span class="token function">unique</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token function">safeEmail</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token string single-quoted-string">'email_verified_at'</span> <span class="token operator">=&gt;</span> <span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token string single-quoted-string">'password'</span> <span class="token operator">=&gt;</span> <span class="token string single-quoted-string">'$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'</span><span class="token punctuation">,</span> <span class="token comment">// password</span>
+            <span class="token string single-quoted-string">'remember_token'</span> <span class="token operator">=&gt;</span> <span class="token class-name static-context">Str</span><span class="token operator">::</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><ul><li>Ingresamos al archivo <code>database/seeders/ArticlesTableSeeder.php</code></li></ul> <div class="language-php extra-class"><pre class="language-php"><code>    <span class="token comment">//import Model Article</span>
+    <span class="token keyword">use</span> <span class="token package">App<span class="token punctuation">\</span>Models<span class="token punctuation">\</span>Article</span><span class="token punctuation">;</span>
+
+     <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name static-context">Article</span><span class="token operator">::</span><span class="token function">factory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'author_id'</span> <span class="token operator">=&gt;</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><ul><li>Ingresamos al archivo <code>database/seeders/UsersTableSeeder.php</code></li></ul> <div class="language-php extra-class"><pre class="language-php"><code>    <span class="token comment">//import Model Article</span>
+    <span class="token keyword">use</span> <span class="token package">App<span class="token punctuation">\</span>Models<span class="token punctuation">\</span>User</span><span class="token punctuation">;</span>
+
+     <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+         <span class="token variable">$user</span> <span class="token operator">=</span> <span class="token class-name static-context">User</span><span class="token operator">::</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+            <span class="token string single-quoted-string">'name'</span> <span class="token operator">=&gt;</span> <span class="token string single-quoted-string">'romacode'</span><span class="token punctuation">,</span>
+            <span class="token string single-quoted-string">'email'</span> <span class="token operator">=&gt;</span> <span class="token string single-quoted-string">'romacode@gmail.com'</span><span class="token punctuation">,</span>
+            <span class="token string single-quoted-string">'password'</span> <span class="token operator">=&gt;</span> <span class="token function">bcrypt</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'romacode'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token variable">$user</span><span class="token operator">-&gt;</span><span class="token function">createToken</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'Romacode'</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token property">plainTextToken</span><span class="token punctuation">;</span>
+
+        <span class="token class-name static-context">User</span><span class="token operator">::</span><span class="token function">factory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><ul><li>Para acabar vamos al archivo <code>database/seeders/DatabaseSeeder.php</code>
+Y utilizamos los archivos UsersTableSeeder y ArticlesTableSeeder para crear los datos</li></ul> <div class="language-php extra-class"><pre class="language-php"><code>     <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token class-name static-context">UsersTableSeeder</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token variable">$this</span><span class="token operator">-&gt;</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token class-name static-context">ArticlesTableSeeder</span><span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><ul><li>Para finalizar realizamos la migración para crear los datos</li></ul> <div class="language-js extra-class"><pre class="language-js"><code>    <span class="token comment">//&quot;react-hook-form&quot;: &quot;^7.34.2&quot;,</span>
+    php artisan migrate<span class="token operator">:</span>fresh <span class="token operator">--</span>seed
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/roma-fullstack/fullstack-lanm/segundo-pasos.html" class="prev">
+        2.- Creando nuestro primer model (Article)
+      </a></span> <span class="next"><a href="/roma-fullstack/fullstack-lanm/cuarto-paso.html">
+        4.- Creando nuestro primer Controller and Resource (Article)
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/roma-fullstack/assets/js/app.597ac0ff.js" defer></script><script src="/roma-fullstack/assets/js/2.3f4652b3.js" defer></script><script src="/roma-fullstack/assets/js/21.58154950.js" defer></script>
+  </body>
+</html>
